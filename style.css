@@ -1,0 +1,154 @@
+/* =========================================== 공통영역 ===========================================*/
+/* ============================================================================================*/
+@font-face {
+  src: local('GmarketSansBold') url('./fonts/GmarketSansBold.woff') format('woff');
+
+  /* 폰트 종류 
+    N: 기본, B: 굵게 */
+  --font-familyN: 'Noto Sans KR', serif, sans-serif;
+  --font-familyB: 'GmarketSansBold', serif, sans-serif;
+
+  /* 기본폰트 N */
+  font-family: var(--font-familyN);
+}
+
+a {
+  text-decoration: none;
+  color: #134aa9;
+}
+
+
+
+
+/* =========================================== 헤더 ===========================================*/
+/* ============================================================================================*/
+
+#App header.header {
+  height: 100px;
+}
+
+.header.container {
+  width: 1400px;
+  height: 100px;
+  margin: auto;
+  position: relative;
+}
+
+
+/*------------ 헤더 로고 설정------------------ */
+.header div.header__logo {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+}
+
+.header .header__logo img {
+  padding: 10px 0;
+  height: 80px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+/*------------ 헤더 메뉴 설정------------------ */
+
+
+.header div.header__menu--bg {
+  display: none;
+}
+
+.header div.header__menu {
+  width: 1050px;
+  height: 30px;
+  bottom: 20px;
+  left: 150px;
+  position: absolute;
+  z-index: 1;
+}
+
+.header div.header__menu ul.header__menu--list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header div.header__menu .list--item a {
+  display: block;
+}
+
+
+.header div.header__menu .list--item h2 {
+  text-align: center;
+}
+
+.header div.header__menu ul.header__menu--list li a:hover {
+  color: #2A2E35;
+}
+
+.header div.header__menu ul.header__menu--list div {
+  line-height: 300%;
+  margin-top: 50px;
+}
+
+div.header__menu ul.header__menu--list .list--item a {
+  color: #124AA9;
+  font-size: 21px;
+}
+
+.header__menu--list:hover .list--item div.contents.hide {
+  display: block;
+}
+
+.header__menu--list:hover .list--item div.contents.hide::before {
+  content: "";
+  width: 100%;
+  height: 250px;
+  background-color: #eff4fe;
+  display: block;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  z-index: -1;
+  opacity: 1;
+}
+
+.header__menu--list .list--item div.contents.hide {
+  display: none;
+}
+
+.header__menu--list .list--item div.contents.hide ul {
+  position: absolute;
+  cursor: pointer;
+}
+
+
+/*------------ 헤더 서비스 설정------------------ */
+
+.header .header__service {
+  display: flex;
+  justify-content: flex-end;
+  right: 0;
+  width: 200px;
+  top: 35px;
+  position: absolute;
+}
+
+.header .header__service .material-icons {
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.header .header__service div .material-icons span {
+  font-size: 14px;
+}
+
+.header .header__service div:last-child a {
+  margin-right: 0px;
+}
+
+
+
+/* ============================================================================================*/
+/* ============================================================================================*/
+
+
+
