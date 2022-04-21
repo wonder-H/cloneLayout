@@ -1,13 +1,17 @@
 /* =========================================== 공통영역 ===========================================*/
 /* ============================================================================================*/
 @font-face {
+  font-family: 'GmarketSansBold', serif, sans-serif;
   src: local('GmarketSansBold') url('./fonts/GmarketSansBold.woff') format('woff');
-
+}
+:root {
   /* 폰트 종류 
-    N: 기본, B: 굵게 */
+  N: 기본, B: 굵게 */
   --font-familyN: 'Noto Sans KR', serif, sans-serif;
   --font-familyB: 'GmarketSansBold', serif, sans-serif;
+}
 
+* {
   /* 기본폰트 N */
   font-family: var(--font-familyN);
 }
@@ -34,7 +38,6 @@ a {
   position: relative;
 }
 
-
 /*------------ 헤더 로고 설정------------------ */
 .header div.header__logo {
   position: absolute;
@@ -59,7 +62,7 @@ a {
 .header div.header__menu {
   width: 1050px;
   height: 30px;
-  bottom: 20px;
+  bottom: 35px;
   left: 150px;
   position: absolute;
   z-index: 1;
@@ -72,12 +75,17 @@ a {
 
 .header div.header__menu .list--item a {
   display: block;
+  padding-right: 10px;
+  overflow: visible;
 }
 
-
 .header div.header__menu .list--item h2 {
-  text-align: center;
+  text-align: left;
+  padding-right: 10px;
   font-family: var(--font-familyB);
+  font-weight: bolder;
+  white-space: nowrap;
+  
 }
 
 .header div.header__menu ul.header__menu--list li a:hover {
@@ -92,6 +100,7 @@ a {
 div.header__menu ul.header__menu--list .list--item a {
   color: #124AA9;
   font-size: 21px;
+  
 }
 
 .header__menu--list:hover .list--item div.contents.hide {
@@ -116,10 +125,40 @@ div.header__menu ul.header__menu--list .list--item a {
 }
 
 .header__menu--list .list--item div.contents.hide ul {
-  position: absolute;
+  width: 50px;
+  white-space: nowrap;
+  text-align: left;
   cursor: pointer;
 }
 
+.header__menu--list .list--item div.contents.hide ul li{
+  width: fit-content;
+  position: relative;
+}
+
+.header__menu--list .list--item div.contents.hide ul li::after {
+  content: '';
+  height: 7px;
+  width: 7px;
+  border-radius: 100%;
+  right: -15px;
+  top: 20px;
+  display: inline-block;
+  position: absolute;
+  transition: 0.3s ease;
+  background-color: #134aa9;
+  opacity: 0;
+  scale: .1;
+}
+
+.header__menu--list .list--item div.contents.hide ul li:hover::after {
+  background-color: #134aa9;
+  scale: 1;
+  opacity: 1;
+  height: 8px;
+  width: 8px;
+  right: -20px;
+}
 
 /*------------ 헤더 서비스 설정------------------ */
 
@@ -147,9 +186,6 @@ div.header__menu ul.header__menu--list .list--item a {
 }
 
 
-
-
-
 /* ======================================== 바디 섹션1 ==============================================*/
 /* ============================================================================================*/
 
@@ -162,46 +198,92 @@ section {
 section div.visual {
   width: 100%;
   height: 700px;
-  background-color: #134aa9;
   margin: auto;
   position: absolute;
   z-index: -9999;
 }
 
-
-
-section .visual.container {
+.visual.container.swiper {
   width: 1400px;
   height: 600px;
-  background-color: #ccc;
+  /* background-color: #ccc; */
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
-  z-index: 0;
+  z-index: 1;
 }
 
-section .visual__contents {
-  width: 1400px;
-  height: 600px;
-  left: 0;
-  background-color: #b63131;
-  position: absolute;
-  z-index: 1;
-  /* display: flex; */
+
+.visual.container.swiper .swiper-slide {
+  position: relative;
 }
+
 
 
 .visual__contents .visual__contents--img {
-  background-color: #2A2E35;
-  width: 900px;
+  /* background-color: #2A2E35; */
+  width:900px;
   height: 600px;
-  right: 0;
   position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+.visual__contents .visual__contents--img img {
+  /* background-color: #2A2E35; */
+  width:900px;
+  height: 600px;
+  position: absolute;
+
 }
 
 .visual__contents .visual__contents--text {
+  width: 500px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.visual__contents .visual__contents--text .visual__contents--text-sub p{
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 40px;
+  word-break: keep-all;
+  text-indent: 10px;
+  letter-spacing: -1.5px;
+  white-space: nowrap;
+  color: #134aa9;
 
 }
+.visual__contents .visual__contents--text .visual__contents--text-title {
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 88px;
+  word-break: keep-all;
+  margin: 18px 0;
+  color: #124AA9;
+}
+
+.visual__contents .visual__contents--text .visual__contents--text-date {
+  font-family: var(--font-familyN);
+  font-size: 18px;
+  margin-top: 9px;
+  font-weight: 500;
+  line-height: 18px;
+  word-break: keep-all;
+  flex-basis: 1;
+  color: #134aa9;
+  /* margin-top: 9px; */
+}
+
+
+
+
 
 /*------------ nav 메뉴 설정 ------------------ */
 
@@ -209,7 +291,7 @@ section .visual__contents {
 nav {
   width: 1400px;
   height: 130px;
-  background-color: aqua;
+  background-color: #eff4fe;
   position: absolute;
     left: 50%;
     top: 720px;
@@ -220,6 +302,7 @@ div .sub-menu .sub-menu__contents {
   width: 100%;
   height: 130px;
   font-family: var(--font-familyB);
+  font-weight: bolder;
 }
 
 .sub-menu__contents ul.sub-menu__contents--list {
@@ -232,6 +315,7 @@ div .sub-menu .sub-menu__contents {
 
 .sub-menu__contents ul.sub-menu__contents--list li {
   flex-grow: 1;
+  height: 35px;
 }
 
 
@@ -239,4 +323,33 @@ div .sub-menu .sub-menu__contents {
   /* display: inline; */
   font-family: var(--font-familyB);
   font-size: 25px;
+  font-weight: 800;
+  color: #2A2E35;
+  display: block;
+  position: relative;
+  /* margin-right: 5px; */
+}
+
+.sub-menu__contents ul.sub-menu__contents--list li a:hover{
+  color: #124AA9;
+  
+}
+
+
+
+.sub-menu__contents ul.sub-menu__contents--list li a::after{
+  content: url(https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Farrow_forward_black_24dp.svg?alt=media&token=295d41ae-1b05-42c1-9141-e3478624e2d4);
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 60px;
+  transition: all 0.3s ease;
+}
+
+
+.sub-menu__contents ul.sub-menu__contents--list li a:hover::after{
+  content: url(https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Farrow_forward_black_24dp.svg?alt=media&token=295d41ae-1b05-42c1-9141-e3478624e2d4);
+  position: absolute;
+  right: 50px;
+  transition: all 0.6s ease;
 }
