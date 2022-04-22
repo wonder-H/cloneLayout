@@ -24,15 +24,17 @@
   <link rel="stylesheet" href="style.css">
 
   <title>경기생활문화센터</title>
-  
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-  <script defer src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-  
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 
 
-  <script defer src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-  <script defer src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+
 
   <script defer src="./index.js"></script>
 </head>
@@ -129,19 +131,19 @@
       </div><!-- end header container -->
     </header>
 
-
-
     <!-- 섹션1 /비주얼 영역/ -->
     <section>
 
       <div class="visual">
-        <div class="swiper visual container">
+        <div id="visual" class="swiper visual container">
 
           <div class="swiper-wrapper visual__contents">
             <!-- slide 1 -->
             <div class="swiper-slide">
               <div class="visual__contents--img">
-                <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg04.jpg?alt=media&token=6d8f953a-cae0-4e8b-9fd7-1264af542e86" alt="main-visual-image">
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg04.jpg?alt=media&token=6d8f953a-cae0-4e8b-9fd7-1264af542e86"
+                  alt="main-visual-image">
               </div>
               <div class="visual__contents--text">
                 <div class="visual__contents--text-sub">
@@ -149,8 +151,8 @@
                 </div>
                 <div class="visual__contents--text-title">
                   <h2>생활문화
-                      예술동호회
-                      연계 활동</h2>
+                    예술동호회
+                    연계 활동</h2>
                 </div>
                 <div class="visual__contents--text-date">
                   <p>전시일시 : 2021.12.27(월) ~ 04.23(토), 온라인 VR 전시</p>
@@ -161,7 +163,9 @@
             <!-- slide 2-->
             <div class="swiper-slide">
               <div class="visual__contents--img">
-                <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg06.gif?alt=media&token=8157be43-5a7c-479c-9f0a-78cd86471cbd" alt="main-visual-image"> 
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg06.gif?alt=media&token=8157be43-5a7c-479c-9f0a-78cd86471cbd"
+                  alt="main-visual-image">
               </div>
               <div class="visual__contents--text">
                 <div class="visual__contents--text-sub">
@@ -169,7 +173,7 @@
                 </div>
                 <div class="visual__contents--text-title">
                   <h2>일상에 문화를
-                      물들이다</h2>
+                    물들이다</h2>
                 </div>
                 <div class="visual__contents--text-date"></div>
               </div>
@@ -178,7 +182,9 @@
             <!-- slide 3 -->
             <div class="swiper-slide">
               <div class="visual__contents--img">
-                <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg02.gif?alt=media&token=caa4ece2-0c99-4a4a-83dd-0c56a9dc5135" alt="main-visual-image"> 
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg02.gif?alt=media&token=caa4ece2-0c99-4a4a-83dd-0c56a9dc5135"
+                  alt="main-visual-image">
               </div>
               <div class="visual__contents--text">
                 <div class="visual__contents--text-sub">
@@ -186,7 +192,7 @@
                 </div>
                 <div class="visual__contents--text-title">
                   <h2>경기도민과
-                      만나다</h2>
+                    만나다</h2>
                 </div>
                 <div class="visual__contents--text-date"></div>
               </div>
@@ -196,10 +202,11 @@
           <span class="swiper-pagination"></span>
         </div><!-- swiper visual container끝 -->
       </div><!-- visual 끝 -->
-      
+
 
     </section>
 
+    <!-- nav sub-menu -->
     <nav class="sub-menu container">
       <div class="sub-menu__contents">
         <ul class="sub-menu__contents--list">
@@ -208,11 +215,67 @@
           <li><a>경기상상캠퍼스</span></a></li>
           <li><a>온라인 문의</a></li>
         </ul>
-
       </div>
-    </nav>
-    <!--  -->
+    </nav><!-- nav sub-menu 끝 -->
 
+
+
+    <!-- main -->
+    <main>
+      <section class="main-contents">
+        <div class="main-contents container">
+          <div class="main-contents__visual">
+            <div class="main-contents__visual--title">
+              <h3>이달의 생활문화</h3>
+              <p>이달에 운영되는 다양한 생활문화을 만나보세요.</p>
+              <a href="#">더보기 +</a>
+            </div>
+            <div class="main-contents__visual--cal">
+              <div class="main-contents__visual--cal-month">
+                <button class="btn pre-month">&lt;</button>
+                <span class="cal-show-month"></span>
+                <button class="btn next-month">&gt;</button>
+                <span class="cal-show-year"></span>
+              </div>
+              <div class="main-contents__visual--cal-date"></div>              
+            </div>
+            
+            <div id="main-contents" class="swiper">
+              <div class="swiper-wrapper main-contents__visual--img">
+                <div class="swiper-slide">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg-visual1.jpg?alt=media&token=aebd0624-408e-40fe-9dd1-27dd956327fa"
+                    alt="main-visual-image">
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg-visual2.jpg?alt=media&token=0d3d7e3c-5cda-44d8-8875-c07ef5bad9ad"
+                    alt="main-visual-image">
+                </div>
+              </div>
+            </div>
+
+          </div>
+      </section>
+
+      <section></section>
+      <section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
 
 
 
