@@ -1,11 +1,9 @@
 // ================================== 스와이퍼 =====================================
-const swiperVisual = new Swiper('#visual', {
+const swiperVisual = new Swiper('.swiper.visual__container', {
   autoplay: {
     delay: 3000,
     disableOnInteraction: false,
   },
-  oopAdditionalSlides: 1,
-  watchSlidesProgress: true,
   centeredSlides: true,
   slidesPerView: '1',
   loop: true,
@@ -13,7 +11,6 @@ const swiperVisual = new Swiper('#visual', {
   fadeEffect: {
     crossFade: true,
   },
-  autoHeight: true,
   pagination: {
     el: '.swiper-pagination',
     type: 'bullets',
@@ -25,26 +22,50 @@ const swiperVisual = new Swiper('#visual', {
 });
 
 
-const swiperMainContents = new Swiper('#main-contents',{
+const swiperMainContents = new Swiper('.swiper.main-contents__visual',{
   autoplay: {
-    delay: 3000,
+    delay: 5000,
     disableOnInteraction: false,
   },
+  spaceBetween: 0,
   centeredSlides: true,
-  // spaceBetween: 10,
-  // oopAdditionalSlides: 1,
-  loop: true,
-  centeredSlides: true,
-  // slidesPerView: '1',
-  // slideToClickedSlide: true,
-  // effect: 'coverflow',
-  // coverflowEffect: {
-  //   rotate : 20, 
-  //   stretch : 0, 
-  //   depth : 50,
-    
-  // }
+  slidesPerView: '3',
+  grabCursor: true,
+  slideToClickedSlide: true,
 })
+
+const mainContainerEl = document.querySelector('.main-contents.container')
+
+window.addEventListener('scroll', _.throttle(function () {
+  if (window.scrollY > 400) {
+    gsap.to(mainContainerEl, .6, {
+      opacity: 1,
+      display: 'block', 
+      y: -60,
+    });
+    
+  } else {
+    gsap.to(mainContainerEl, .6, {
+      opacity: 0,
+      display: 'none',
+    })
+  }
+},300))
+
+
+
+
+
+
+
+
+// TweenMax.from(activeImgEl, 1, {
+//   scale: 2,
+//   repeat: -1,
+//   yoyo: true,
+// })
+
+
 
 
 

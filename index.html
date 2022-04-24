@@ -33,6 +33,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
 
 
 
@@ -135,7 +136,7 @@
     <section>
 
       <div class="visual">
-        <div id="visual" class="swiper visual container">
+        <div class="swiper visual__container">
 
           <div class="swiper-wrapper visual__contents">
             <!-- slide 1 -->
@@ -240,22 +241,35 @@
               <div class="main-contents__visual--cal-date"></div>              
             </div>
             
-            <div id="main-contents" class="swiper">
-              <div class="swiper-wrapper main-contents__visual--img">
+            <div class="swiper main-contents__visual">
+              <div class="swiper-wrapper">
+
                 <div class="swiper-slide">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg-visual1.jpg?alt=media&token=aebd0624-408e-40fe-9dd1-27dd956327fa"
+                  <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg-visual1.jpg?alt=media&token=aebd0624-408e-40fe-9dd1-27dd956327fa"
                     alt="main-visual-image">
+                    <!-- <p>#교육 <span>2022.04.13 - 2022.04.27</span></p>
+                    <p>아파트 옆 문화예술, 나도 그림책 미술작가! with '도도리' 시민동아리</p> -->
+                    
                 </div>
                 <div class="swiper-slide">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg-visual2.jpg?alt=media&token=0d3d7e3c-5cda-44d8-8875-c07ef5bad9ad"
+                  <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg-visual2.jpg?alt=media&token=0d3d7e3c-5cda-44d8-8875-c07ef5bad9ad"
                     alt="main-visual-image">
+                    <!-- <p>#교육 <span>2022.04.02 - 2022.04.30</span></p>
+                    <p>
+                      아파트 옆 문화예술, 그림 그리며 함께 놀자!
+                    </p> -->
                 </div>
+
               </div>
             </div>
+            
+          </div><!-- <div class="main-contents__visual"> -->
 
-          </div>
+        </div><!-- <div class="main-contents container"> -->
+
+
+          
+
       </section>
 
       <section></section>

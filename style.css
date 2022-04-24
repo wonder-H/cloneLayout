@@ -65,15 +65,17 @@ a {
   bottom: 35px;
   left: 150px;
   position: absolute;
-  z-index: 1;
+  z-index: 9;
 }
 
 .header div.header__menu ul.header__menu--list {
   display: flex;
   justify-content: space-around;
+  
 }
 
 .header div.header__menu .list--item a {
+  font-family: var(--font-familyB);
   display: block;
   padding-right: 10px;
   overflow: visible;
@@ -82,10 +84,8 @@ a {
 .header div.header__menu .list--item h2 {
   text-align: left;
   padding-right: 10px;
-  font-family: var(--font-familyB);
-  font-weight: bolder;
+  font-weight: 600;
   white-space: nowrap;
-  
 }
 
 .header div.header__menu ul.header__menu--list li a:hover {
@@ -100,7 +100,6 @@ a {
 div.header__menu ul.header__menu--list .list--item a {
   color: #124AA9;
   font-size: 21px;
-  
 }
 
 .header__menu--list:hover .list--item div.contents.hide {
@@ -189,39 +188,29 @@ div.header__menu ul.header__menu--list .list--item a {
 /* ======================================== 바디 섹션1 ==============================================*/
 /* ============================================================================================*/
 
-
-section {
-  position: relative;
-}
-
-
 section div.visual {
   width: 100%;
   height: 700px;
   margin: auto;
-  position: absolute;
-  z-index: -9999;
 }
 
-.visual.container.swiper {
+section .swiper.visual__container{
   width: 1400px;
   height: 600px;
-  /* background-color: #ccc; */
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
-  z-index: 1;
 }
 
+.swiper-wrapper.visual__contents{
+  z-index: 5;
+}
 
-.visual.container.swiper .swiper-slide {
+.swiper-wrapper.visual__contents .swiper-slide {
   position: relative;
 }
 
-
-
 .visual__contents .visual__contents--img {
-  /* background-color: #2A2E35; */
   width:900px;
   height: 600px;
   position: absolute;
@@ -229,13 +218,10 @@ section div.visual {
   top: 0;
 }
 
-
 .visual__contents .visual__contents--img img {
-  /* background-color: #2A2E35; */
   width:900px;
   height: 600px;
   position: absolute;
-
 }
 
 .visual__contents .visual__contents--text {
@@ -258,8 +244,8 @@ section div.visual {
   letter-spacing: -1.5px;
   white-space: nowrap;
   color: #134aa9;
-
 }
+
 .visual__contents .visual__contents--text .visual__contents--text-title {
   font-size: 80px;
   font-weight: 500;
@@ -278,24 +264,18 @@ section div.visual {
   word-break: keep-all;
   flex-basis: 1;
   color: #134aa9;
-  /* margin-top: 9px; */
 }
-
-
-
-
 
 /*------------ nav 메뉴 설정 ------------------ */
 
-
 nav {
   width: 1400px;
-  height: 130px;
+  margin: auto;
   background-color: #eff4fe;
   position: absolute;
-    left: 50%;
-    top: 720px;
-    transform: translate(-50%, 0);
+  left: 50%;
+  top: 720px; 
+  transform: translate(-50%, 0);
 }
 
 div .sub-menu .sub-menu__contents {
@@ -316,26 +296,20 @@ div .sub-menu .sub-menu__contents {
 .sub-menu__contents ul.sub-menu__contents--list li {
   flex-grow: 1;
   height: 35px;
+  font-family: var(--font-familyB);
+  font-weight: 700;
 }
 
-
 .sub-menu__contents ul.sub-menu__contents--list li a{
-  /* display: inline; */
-  font-family: var(--font-familyB);
   font-size: 25px;
-  font-weight: 800;
   color: #2A2E35;
   display: block;
   position: relative;
-  /* margin-right: 5px; */
 }
 
 .sub-menu__contents ul.sub-menu__contents--list li a:hover{
-  color: #124AA9;
-  
+  color: #124AA9;  
 }
-
-
 
 .sub-menu__contents ul.sub-menu__contents--list li a::after{
   content: url(https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Farrow_forward_black_24dp.svg?alt=media&token=295d41ae-1b05-42c1-9141-e3478624e2d4);
@@ -346,10 +320,209 @@ div .sub-menu .sub-menu__contents {
   transition: all 0.3s ease;
 }
 
-
 .sub-menu__contents ul.sub-menu__contents--list li a:hover::after{
   content: url(https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Farrow_forward_black_24dp.svg?alt=media&token=295d41ae-1b05-42c1-9141-e3478624e2d4);
   position: absolute;
   right: 50px;
   transition: all 0.6s ease;
+}
+
+
+
+
+/* ======================================== 바디 메인 ==============================================*/
+/* ============================================================================================*/
+
+main section.main-contents {
+  background-color: #134aa9;
+  width: 100%;
+  height: 1000px;
+}
+
+.main-contents .container {
+  position: relative;
+  width: 1400px;
+  top: 200px;
+  margin: auto;
+
+  font-family: var(--font-familyB);
+}
+
+
+.main-contents__visual .main-contents__visual--title h3{
+  font-weight: 600;
+  color: #fff;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.main-contents__visual .main-contents__visual--title p{
+  font-family: var(--font-familyB);
+  font-weight: 600;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+
+.main-contents__visual .main-contents__visual--title a{
+  color: #fff;
+  font-size: 16px;
+  position: absolute;
+  right: 0;
+
+}
+.main-contents__visual .main-contents__visual--title a:hover{
+  color: #8ebff0;
+}
+
+
+.main-contents__visual .main-contents__visual--cal {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 60px 25px 25px;
+}
+
+
+.main-contents__visual .main-contents__visual--cal-month {
+
+color: #8ebff0;
+
+}
+
+
+.main-contents__visual .main-contents__visual--cal-month .pre-month,
+.main-contents__visual .main-contents__visual--cal-month .next-month{
+  font-size: 20px;
+  color: #8ebff0;
+  height: 25px;
+  margin: 0 4px;
+
+}
+
+.main-contents__visual .main-contents__visual--cal-month .cal-show-month{
+  font-weight: 600;
+  font-size: 38px;
+  color: #8ebff0;
+}
+
+
+
+.main-contents__visual .main-contents__visual--cal-month .cal-show-year{
+  display: block;
+  font-size: 14px;
+  color: #8ebff0;
+  text-align: center;
+  margin-top: -5px;
+}
+
+
+
+.main-contents__visual .main-contents__visual--cal-date {
+display: flex;
+font-family: var(--font-familyB);
+width: 1240px;
+color: #8ebff0;
+font-size: 16px;
+justify-content: space-between;
+align-items: center;
+}
+
+.main-contents__visual .main-contents__visual--cal-date span{
+
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 37px;
+
+}
+
+.main-contents__visual .main-contents__visual--cal-date span:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.main-contents__visual .main-contents__visual--cal-date span.today{
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+  color: #fff;
+  position: relative;
+}
+
+
+
+.main-contents__visual .main-contents__visual--cal-date span.today::before{
+  content:'';
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+  display: block;
+  position: absolute;
+  text-decoration: underline;
+}
+
+
+/* ====================swiper영역==================================*/
+/* 수정중 */
+.swiper.main-contents__visual{
+  width: 1200px;
+  height: 700px;
+  display: block;
+}
+
+.swiper.main-contents__visual .swiper-wrapper {
+  margin-top: 30px;
+}
+
+.main-contents .swiper .swiper-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.main-contents .swiper .swiper-wrapper .swiper-slide img {
+  border-radius: 15px;
+  display: block;
+  height: 440px;
+  width: 300px;
+  object-fit: cover;
+}
+
+.main-contents .swiper .swiper-wrapper .swiper-slide-active img {
+  border-radius: 15px;
+  display: block;
+  width: 370px;
+  height: 525px;
+  object-fit: cover;
+  top: 0;
+}
+
+.main-contents .swiper .swiper-wrapper .swiper-slide-active::before{
+  content: "";
+  background-color: rgb(0, 0, 0);
+  display: inline-block;
+  opacity: 0.7;
+  border-radius: 15px;
+  width: 370px;
+  height: 525px;
+  position: absolute;
+  z-index: 5;
+}
+
+.main-contents .swiper .swiper-wrapper .swiper-slide-active:hover::after{
+  content: "MORE";
+  background-color: #fff;
+  display: inline-block;
+  font-size: 13px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 250px;
+  line-height: 95px;
+  z-index: 9;
 }
