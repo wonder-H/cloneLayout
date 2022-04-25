@@ -27,14 +27,14 @@ const swiperMainContents = new Swiper('.swiper.main-contents__visual',{
     delay: 5000,
     disableOnInteraction: false,
   },
-  spaceBetween: 0,
+  // spaceBetween: 20,
   centeredSlides: true,
-  slidesPerView: '3',
+  slidesPerView: 3,
   grabCursor: true,
   slideToClickedSlide: true,
 })
 
-const mainContainerEl = document.querySelector('.main-contents.container')
+const mainContainerEl = document.querySelector('.main-contents.container .main-contents__visual')
 
 window.addEventListener('scroll', _.throttle(function () {
   if (window.scrollY > 400) {
@@ -53,7 +53,17 @@ window.addEventListener('scroll', _.throttle(function () {
 },300))
 
 
-
+const swiperMainContentsSNS = new Swiper('.swiper.main-contents__sns--img',{
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  spaceBetween: 10,
+  centeredSlides: true,
+  slidesPerView: '3',
+  grabCursor: true,
+  slideToClickedSlide: true,
+})
 
 
 
@@ -108,6 +118,5 @@ function calendar() {
       createListEl.classList.add('today');
     }
   }
-
 }
 calendar()
