@@ -336,15 +336,16 @@ div .sub-menu .sub-menu__contents {
 main section.main-contents {
   background-color: #134aa9;
   width: 100%;
-  height: 1000px;
+  height: 1200px;
 }
 
-.main-contents .container {
+.main-contents.container.visual {
   position: relative;
   width: 1400px;
-  top: 200px;
+  top: 300px;
+  height: 1000px;
   margin: auto;
-
+  /* margin-bottom: 200px; */
   font-family: var(--font-familyB);
 }
 
@@ -386,9 +387,7 @@ margin: 60px 25px 25px;
 
 
 .main-contents__visual .main-contents__visual--cal-month {
-
 color: #8ebff0;
-
 }
 
 
@@ -467,10 +466,10 @@ align-items: center;
 
 
 /* ====================swiper영역==================================*/
-/* 수정중 */
+
 .swiper.main-contents__visual{
   width: 1200px;
-  height: 700px;
+  height: 600px;
   display: block;
 }
 
@@ -481,6 +480,8 @@ align-items: center;
 .main-contents .swiper .swiper-wrapper .swiper-slide {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .main-contents .swiper .swiper-wrapper .swiper-slide img {
@@ -500,16 +501,53 @@ align-items: center;
   top: 0;
 }
 
-.main-contents .swiper .swiper-wrapper .swiper-slide-active::before{
-  content: "";
-  background-color: rgb(0, 0, 0);
-  display: inline-block;
-  opacity: 0.7;
+
+.main-contents .swiper .swiper-wrapper p {
+  color: #fff;
+  width: 300px;
+  display: block;
+  
+}
+
+
+.main-contents .swiper .swiper-wrapper .swiper-slide > div {
+  margin-top: 20px;
+}
+
+.main-contents .swiper .swiper-wrapper .swiper-slide p {
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 100%;
+  text-align: left;
+}
+
+.main-contents .swiper .swiper-wrapper .swiper-slide p.tag {
+  color: #00b1e7;
+  display: inline;
+  font-size: 16px;
+}
+
+.main-contents .swiper .swiper-wrapper .swiper-slide p span {
+  color: #fff;
+}
+
+
+.main-contents .swiper .swiper-wrapper .swiper-slide-active div.visual-text{
+  display: none;
+  opacity: 0;
+}
+
+.main-contents .swiper .swiper-wrapper .swiper-slide-active div.active-text{
+  position: absolute;
+  opacity: 0.8;
+  background-color: #000;
   border-radius: 15px;
+  display: block;
   width: 370px;
   height: 525px;
-  position: absolute;
-  z-index: 5;
+  object-fit: cover;
+  top:0;
+  margin: 0;
 }
 
 .main-contents .swiper .swiper-wrapper .swiper-slide-active:hover::after{
@@ -525,4 +563,295 @@ align-items: center;
   bottom: 250px;
   line-height: 95px;
   z-index: 9;
+}
+
+
+/* ----------------메인 컨텐츠 인포 컨테이너----------------------------- */
+
+article.main-contents.container.info{
+  height: 570px;
+  width: 100%;
+  margin-top: 300px;
+}
+
+article.main-contents.container.info h3{ 
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 40px;
+  padding-bottom: 15px;
+}
+
+.main-contents.container.info div.main-contents__space{
+  height: 570px;
+  width: 1400px;
+  margin: auto;
+  position: relative;
+}
+
+article.main-contents div button.more-btn
+{
+  background-color: #fff;
+  border: 2px solid #124AA9;
+  color: #124AA9;
+  line-height: 90px;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 15px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  border-radius: 100%;
+  position: absolute;
+  right: 15px;
+  top: 0;
+}
+
+article.main-contents div button.more-btn:hover{
+  background-color: #124AA9;
+  color: #fff;
+  animation: btn-hover .3s ease 1;
+}
+
+@keyframes btn-hover {
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.main-contents.container.info div.main-contents__space--btns {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 840px;
+  margin-top: 50px;
+}
+
+.main-contents.container.info ul.main-contents__space--btns-list li {
+  background-color: #fff;
+  display: inline-block;
+  margin: 10px 10px 10px 0;
+  font-size: 20px;
+  height: 75px;
+  font-weight: 500;
+  color: #124AA9;
+  border: 2px solid #124AA9;
+  border-radius: 50px;
+  padding: 0 30px;
+  word-break: keep-all;
+  line-height: 55px;
+}
+
+.main-contents.container.info ul.main-contents__space--btns-list:nth-of-type(1) li:first-child  {
+  background-color: #124AA9;
+  color: #fff;
+}
+
+.main-contents.container.info ul.main-contents__space--btns-list li:hover {
+  background-color: #124AA9;
+  color: #fff;
+  transition: all .3s ease;
+}
+
+.main-contents.container.info .main-contents__space--img {
+  width: 560px;
+  height: 380px;
+  display: block;
+  position: absolute;
+  right:0;
+  top: 130px;
+}
+
+
+.main-contents.container.info .main-contents__find {
+  height: 250px;
+  width: 1400px;
+  margin: auto;
+  margin-top: 200px;
+  position: relative;
+}
+
+.main-contents.container.info .main-contents__find--img{
+  height: 250px;
+  position: absolute;
+  right: 120px;
+  top:0;
+}
+
+.main-contents.container.info div.main-contents__find div button.more-btn
+{
+  position: absolute;
+  top: 100px;
+}
+
+
+
+.main-contents.container.info .main-contents__sns {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  margin-top: 150px;
+  background-color: #eff4fe;
+  position: relative;
+}
+
+
+
+.main-contents.container.info .main-contents__sns div.main-contents__sns--title{
+  width: 1400px;
+  height: 630px;
+  display: block;
+  margin: auto;
+  padding-top: 120px;
+  position: relative;
+}
+
+
+.main-contents.container.info .main-contents__sns div button.more-btn
+{
+  position: absolute;
+  display: block;
+  left: 40px;
+  top: 300px;
+}
+
+
+
+
+.main-contents.container.info .main-contents__sns .swiper{
+  /* width 840 */
+  width: calc( 280px * 3 );
+  height: 250px;
+  position: absolute;
+  top: 250px;
+  left: 60%; 
+  /* left 이동 후 가져오기 */
+  margin-left: calc(( 280px * 3) / -2 );
+}
+
+
+.main-contents.container.info .main-contents__sns .swiper ul li img{
+  border-radius: 20px;
+  width: 240px;
+  height: 240px;
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+.main-contents .main-contents__notice{
+  width: 100%;
+  margin: auto;
+  background-color: #eff4fe;
+  position: relative;
+}
+
+
+
+
+
+.main-contents .main-contents__notice div.main-contents__notice--title{
+  /* background-color: #333; */
+  width: 1400px;
+  margin: auto;
+  padding-top: 120px;
+}
+
+
+/* .main-contents .main-contents__notice div.main-contents__notice--title h3{
+  margin-top: 100px;
+}
+ */
+
+
+.main-contents .main-contents__notice ul.main-contents__notice--list{
+  /* background-color: #333; */
+  width: 1400px;
+  /* border: 1px solid #000; */
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+
+
+.main-contents .main-contents__notice ul.main-contents__notice--list li{
+  width: calc((1100px / 3) + 60px);
+  margin-top: 70px;
+  background-color: #fff;
+  /* border: 1px solid #000; */
+  justify-content: center;
+  align-items: space-between;
+  /* flex-wrap: wrap; */
+  padding: 40px 40px 60px;
+  font-family: inherit;
+}
+
+.main-contents .main-contents__notice ul.main-contents__notice--list li p{
+  font-size: 18px;
+}
+
+.main-contents .main-contents__notice ul.main-contents__notice--list li p:nth-of-type(1){
+  color: #ababab;
+}
+
+.main-contents .main-contents__notice ul.main-contents__notice--list li p:nth-of-type(2){
+  font-size: 29px;
+  font-weight: 500;
+  margin: 20px 0 40px;
+  word-wrap: break-word;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.main-contents .main-contents__notice ul.main-contents__notice--list li p:nth-of-type(3){
+  line-height: 28px;
+  margin: 0 5px 80px;
+  height: 56px;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  color: #787d86;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical;
+}
+
+.main-contents .main-contents__notice ul.main-contents__notice--list li p:nth-of-type(4){
+  font-size: 13px;
+  color: #ababab;
+  position: relative;
+}
+
+.main-contents .main-contents__notice ul.main-contents__notice--list li p:nth-of-type(4)::after{
+  content: "+";
+  width: 40px;
+  height: 40px;
+  font-size: 50px;
+  display: inline;
+  position: absolute;
+  right: 0;
+}
+
+
+footer .footer {
+  height: 280px;
+  width: 100%;
+  background-color: #333;
+  position: absolute;
+  bottom: 0;
+}
+
+footer .footer div{
+  height: 280px;
+  width: 1400px;
+  background-color: rgb(180, 28, 28);
 }
