@@ -1,406 +1,565 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
+    />
+    <!-- favicon -->
+    <link
+      rel="icon"
+      href="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Ffavicon.png?alt=media&token=01266645-43f7-40f3-81ee-cfe909dbee55"
+    />
+    <!-- xeicon -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <!-- google icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <title>경기생활문화센터</title>
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- gsap + gasp scrollTo -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"></script>
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- lodash -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"
+      integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww=="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./index.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- css reset -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
-
-  <!-- favicon -->
-  <link rel="icon"
-    href="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Ffavicon.png?alt=media&token=01266645-43f7-40f3-81ee-cfe909dbee55" />
-
-  <!-- google icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <!-- google fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;900&display=swap"
-    rel="stylesheet">
-
-  <!-- css -->
-  <link rel="stylesheet" href="style.css">
-
-  <title>경기생활문화센터</title>
-
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
-
-
-
-  <script defer src="./index.js"></script>
-</head>
-
-<body>
-  <div id="App">
-    <!-- 헤더영역 -->
-    <header class="header">
-      <div class="header container">
-
-        <div class="header__logo">
-          <a href="#">
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg01.svg?alt=media&token=794c2e93-b720-4360-a6e4-35b744d694c5"
-              alt="경기생활문화센터 로고" />
-          </a>
-        </div> <!-- end logo -->
-
-        <div class="header__menu">
-
-          <ul class="header__menu--list">
-            <li class="list--item">
-              <a class="name" href="#">
-                <h2>경기생활문화센터</h2>
-              </a>
-              <div class="contents hide">
-                <ul>
-                  <li>센터소개</li>
-                  <li>조직도</li>
-                  <li>사업안내</li>
-                  <li>오시는길</li>
-                </ul>
-              </div>
-            </li><!-- end list--item -->
-
-            <li class="list--item">
-              <a class="name" href="#">
-                <h2>경기도생활문화</h2>
-              </a>
-              <div class="contents hide">
-                <ul>
-                  <li>우리지역 생활문화공간</li>
-                  <li>생활문화찾기</li>
-                </ul>
-              </div>
-            </li><!-- end list--item -->
-
-            <li class="list--item">
-              <a class="name" href="#">
-                <h2>기록자료</h2>
-              </a>
-              <div class="contents hide">
-                <ul>
-                  <li>영상채널</li>
-                  <li>발간도서</li>
-                </ul>
-              </div>
-            </li><!-- end list--item -->
-
-            <li class="list--item">
-              <a class="name" href="#">
-                <h2>웹진</h2>
-              </a>
-              <div class="contents hide">
-                <ul>
-                  <li>소개</li>
-                  <li>웹진</li>
-                </ul>
-              </div>
-            </li><!-- end list--item -->
-
-            <li class="list--item">
-              <a class="name" href="#">
-                <h2>소통</h2>
-              </a>
-              <div class="contents hide">
-                <ul>
-                  <li>공지사항</li>
-                  <li>자주묻는질문</li>
-                  <li>1:1문의</li>
-                </ul>
-              </div>
-            </li><!-- end list--item -->
-          </ul><!-- end header__menu--list -->
-
-        </div><!-- end header__menu -->
-
-        <div class="header__service">
-          <div class="header__service--login"><a class="material-icons">lock<span>로그인</span></a></div>
-          <div class="header__service--search"><a class="material-icons">search<span>검색</span></a></div>
-          <div class="header__service--cal"><a class="material-icons">calendar_today<span>일정</span></a></div>
-        </div><!-- end  header__service -->
-
-      </div><!-- end header container -->
-    </header>
-
-    <!-- 섹션1 /비주얼 영역/ -->
-    <section>
-
-      <div class="visual">
-        <div class="swiper visual__container">
-
-          <div class="swiper-wrapper visual__contents">
-            <!-- slide 1 -->
-            <div class="swiper-slide">
-              <div class="visual__contents--img">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg04.jpg?alt=media&token=6d8f953a-cae0-4e8b-9fd7-1264af542e86"
-                  alt="main-visual-image">
-              </div>
-              <div class="visual__contents--text">
-                <div class="visual__contents--text-sub">
-                  <p>온라인 VR 활동공유회(전시)</p>
-                </div>
-                <div class="visual__contents--text-title">
-                  <h2>생활문화
-                    예술동호회
-                    연계 활동</h2>
-                </div>
-                <div class="visual__contents--text-date">
-                  <p>전시일시 : 2021.12.27(월) ~ 04.23(토), 온라인 VR 전시</p>
-                </div>
-              </div>
-
-            </div><!-- slide 1 -->
-            <!-- slide 2-->
-            <div class="swiper-slide">
-              <div class="visual__contents--img">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg06.gif?alt=media&token=8157be43-5a7c-479c-9f0a-78cd86471cbd"
-                  alt="main-visual-image">
-              </div>
-              <div class="visual__contents--text">
-                <div class="visual__contents--text-sub">
-                  <p>경기도 생활문화의 중심</p>
-                </div>
-                <div class="visual__contents--text-title">
-                  <h2>일상에 문화를
-                    물들이다</h2>
-                </div>
-                <div class="visual__contents--text-date"></div>
-              </div>
-
-            </div><!-- slide 2 -->
-            <!-- slide 3 -->
-            <div class="swiper-slide">
-              <div class="visual__contents--img">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg02.gif?alt=media&token=caa4ece2-0c99-4a4a-83dd-0c56a9dc5135"
-                  alt="main-visual-image">
-              </div>
-              <div class="visual__contents--text">
-                <div class="visual__contents--text-sub">
-                  <p>지역주민 누구나 이용가능한 생활문화공간</p>
-                </div>
-                <div class="visual__contents--text-title">
-                  <h2>경기도민과
-                    만나다</h2>
-                </div>
-                <div class="visual__contents--text-date"></div>
-              </div>
-              <!-- slide 3 -->
-            </div>
+  <body>
+    <div id="app">
+      <!-- / 헤더영역 / -->
+      <header class="header">
+        <div class="header container">
+          <div class="header__logo">
+            <a href="#">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg01.svg?alt=media&token=794c2e93-b720-4360-a6e4-35b744d694c5"
+                alt="경기생활문화센터 로고"
+              />
+            </a>
           </div>
-          <span class="swiper-pagination"></span>
-        </div><!-- swiper visual container끝 -->
-      </div><!-- visual 끝 -->
-
-
-    </section>
-
-    <!-- nav sub-menu -->
-    <nav class="sub-menu container">
-      <div class="sub-menu__contents">
-        <ul class="sub-menu__contents--list">
-          <li><a>우리지역 생활문화공간</a></li>
-          <li><a>생활문화 찾기</span></a></li>
-          <li><a>경기상상캠퍼스</span></a></li>
-          <li><a>온라인 문의</a></li>
-        </ul>
-      </div>
-    </nav><!-- nav sub-menu 끝 -->
-
-
-
-    <!-- main -->
-    <main>
-      <section class="main-contents">
-        <article class="main-contents container visual">
-          <div class="main-contents__visual">
-            <div class="main-contents__visual--title">
-              <h3>이달의 생활문화</h3>
-              <p>이달에 운영되는 다양한 생활문화을 만나보세요.</p>
-              <a href="#">더보기 +</a>
-            </div>
-            <div class="main-contents__visual--cal">
-              <div class="main-contents__visual--cal-month">
-                <button class="btn pre-month">&lt;</button>
-                <span class="cal-show-month"></span>
-                <button class="btn next-month">&gt;</button>
-                <span class="cal-show-year"></span>
-              </div>
-              <div class="main-contents__visual--cal-date"></div>              
-            </div>
-            
-            <div class="swiper main-contents__visual">
-              <div class="swiper-wrapper">
-
-                <div class="swiper-slide">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg-visual1.jpg?alt=media&token=aebd0624-408e-40fe-9dd1-27dd956327fa"
-                    alt="main-visual-image">
-                    <div class="active-text">
-                      <p>아파트 옆 문화예술, 나도 그림책 미술작가! with '도도리' 시민동아리
-                         더샵채움작은도서관
-                         2022.04.13 ~ 2022.04.27</p>
-                    </div>
-                    <div class="visual-text">
-                      <p class="tag">#교육 <span>2022.04.13 - 2022.04.27</span></p>
-                      <p>아파트 옆 문화예술, 나도 그림책 미술작가! with '도도리' 시민동아리</p>
-                    </div>
+          <div class="header__menu">
+            <ul class="header__menu--list">
+              <li class="list--item">
+                <a class="name" href="#">
+                  <h2>경기생활문화센터</h2>
+                </a>
+                <div class="contents hide">
+                  <ul>
+                    <li>센터소개</li>
+                    <li>조직도</li>
+                    <li>사업안내</li>
+                    <li>오시는길</li>
+                  </ul>
                 </div>
-                <div class="swiper-slide">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg-visual2.jpg?alt=media&token=0d3d7e3c-5cda-44d8-8875-c07ef5bad9ad"
-                    alt="main-visual-image">
-                    <div class="active-text">
-                      <p>아파트 옆 문화예술, 그림 그리며 함께 놀자!
-                         이음작은도서관
-                         2022.04.02 ~ 2022.04.30</p>
-                    </div>
-                    <div class="visual-text">
-                      <p class="tag">#교육 <span>2022.04.02 - 2022.04.30</span></p>
-                      <p>아파트 옆 문화예술, 그림 그리며 함께 놀자!</p>
-                    </div>
-                </div>
-
-              </div>
-            </div>
-            
-          </div><!-- <div class="main-contents__visual"> -->
-
-
-          
-            
-            
-        </article><!-- <article class="main-contents container visual"> -->
-        
-        <article class="main-contents container info">
-
-          <div class="main-contents__space">
-            <div class="main-contents__space--title">
-              <h3>경기생활문화센터<br>공간소개</h3>
-              <p>경기생활문화센터에서 운영하는 공간을 둘러보세요.</p>
-              <button class="more-btn">MORE</button>
-            </div>
-            <div class="main-contents__space--btns">
-              <ul class="main-contents__space--btns-list">
-                <li><button>책 놀이터</button></li>
-                <li><button>생활 수유실</button></li>
-              </ul>
-              <ul class="main-contents__space--btns-list">               
-                <li><button>동네부엌</button></li>
-                <li><button>생생 수유실</button></li>
-                <li><button>마주침 공간1</button></li>
-                <li><button>마주침 공간2</button></li>
-              </ul>
-              <ul class="main-contents__space--btns-list">   
-                <li><button>한뼘전시</button></li>
-                <li><button>무아지경</button></li>
-                <li><button>생생살롱1</button></li>
-                <li><button>생생살롱2</button></li>              
-              </ul>
-            </div>
-            <img class="main-contents__space--img" src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg16.png?alt=media&token=2ffe91f3-d950-4cda-879e-b298a7648536" alt="main-contents__info--img" >
-          </div>
-
-
-          <div class="main-contents__find">
-            <div class="main-contents__find--title">
-              <h3>우리지역<br>생활문화공간을 찾아보세요.</h3>
-              <p>내가 사는 지역 생활문화공간 바로 찾기</p>
-              <button class="more-btn">MORE</button>
-            </div>
-            <img class="main-contents__find--img" src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg38.svg?alt=media&token=7e8e9891-186b-4ba5-adc9-9602f70e91e9" alt="main-contents__find--img">
-          </div>
-
-          <div class="main-contents__sns">
-            <div class="main-contents__sns--title">
-              <h3>경기생활문화센터 SNS</h3>
-              <p>경기생활문화센터와 친구를 맺고<br>다양한 소식을 만나보세요.</p>
-              <button class="more-btn">MORE</button>
-            </div>
-            <div class="swiper main-contents__sns--img">
-              <ul class="swiper-wrapper"> 
-                <li class="swiper-slide">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg41.jpg?alt=media&token=4f0531cc-2e39-40ca-a7a7-89949b96edb1" alt="youtube-img"></li>
-                <li class="swiper-slide">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg42.jpg?alt=media&token=91b7aafb-13c5-4dc0-936e-82217efe27ac" alt="youtube-img">
-                </li>
-                <li class="swiper-slide">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg43.jpg?alt=media&token=da68517f-0100-4a71-8e53-076da16f83d3" alt="youtube-img">
-                </li>
-                <li class="swiper-slide">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg44.jpg?alt=media&token=b4cfc418-5862-4aed-b674-5587b0f7894f" alt="youtube-img">
-                </li>
-                <li class="swiper-slide">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg45.jpg?alt=media&token=d7d70e30-67f8-4d48-a543-79746c48e1bd" alt="youtube-img">
-                </li>
-                <li class="swiper-slide">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg46.jpg?alt=media&token=15ec71bd-4bed-4251-8c16-e56ad5929587" alt="youtube-img">
-                </li>
-                <li class="swiper-slide">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg47.jpg?alt=media&token=a8cf93e2-4de0-42be-b6d8-75aac1659eba" alt="youtube-img">
-                </li>
-                <li class="swiper-slide">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg48.jpg?alt=media&token=490e337e-8d0b-4369-b9da-3c3fcdb3f99e" alt="youtube-img">
-                </li>
-                <li class="swiper-slide">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg49.jpg?alt=media&token=d9d06c99-4b4c-48bf-a143-b2552726bb42" alt="youtube-img">
-                </li>
-
-              </ul>
-            </div>
-          </div>  
-
-          <div class="main-contents__notice">
-            <div class="main-contents__notice--title">
-              <h3>새로운 소식</h3>
-            </div>
-            <ul class="main-contents__notice--list">
-              <li class="main-contents__notice--list-item">
-                <p class="main-contents__notice--list-type">공지</p>
-                <p class="main-contents__notice--list-title">시니어 디지털 교육<br> "시니어도 디지털 문화를 즐긴다" 참여자 모집</p>
-                <p class="main-contents__notice--list-text">✨ 경기생활문화센터 시니어 디지털 교육 ✨ &lt;시니어도 디지털 문화를 즐긴다&gt; 내 손안에 잇지만, 늘 알쏭달쏭 스마트폰📱 기본활용법부터 자주쓰는 네이버, 카카오톡, 유튜브 활용법과 대망의 모바일 뱅킹까지! 시니어를 위한 스마트폰 활용 교육을 진행합니다🤗   🔍 일정 - 일자 : 2022.05.03 ~ 06.30 (8주) - 시간 : 10:00 ~ 12:00 (2시간) - 매주 화요일, 목요일 2개반 운영   🔍 대상 - 1972년 이전 출생자로 핸드폰 명의와 신청자명이 동일한 경기도민 - 화요반 7명, 목요반 9명 모집 *선착순   🔍 장소 - 생생1990 3층 생활창작공방 회의실 (경기도 수원시 서둔로 166 경기상상캠퍼스)   🔍 신청 (화요반) 👈클릭 (목요반) 👈클릭   ☎ 문의 031-296-0540(경기생활문화센터)   많은 관심과 참여 부탁드립니다🤗💕</p>
-                <p class="main-contents__notice--list-date">2022. 04. 18</p>
               </li>
-              <li class="main-contents__notice--list-item">
-                <p class="main-contents__notice--list-type">공지</p>
-                <p class="main-contents__notice--list-title">경기도 31개 시군 생활문화<br>교류의 장 &lt;생활문화 31&gt; 온라인 카페 개설</p>
-                <p class="main-contents__notice--list-text">경기도 31개 시군 생활문화 교류의 장 🙋‍♂️ 생활문화31 카페 오픈 🙋‍♀️ 활발한 활동을 통해 다양한 생활문화 정보를 교류해보아요🤗</p>
-                <p class="main-contents__notice--list-date">2022. 04. 14</p>
+              <li class="list--item">
+                <a class="name" href="#">
+                  <h2>경기도생활문화</h2>
+                </a>
+                <div class="contents hide">
+                  <ul>
+                    <li>우리지역 생활문화공간</li>
+                    <li>생활문화찾기</li>
+                  </ul>
+                </div>
               </li>
-              <li class="main-contents__notice--list-item">
-                <p class="main-contents__notice--list-type">공지</p>
-                <p class="main-contents__notice--list-title">2022년 경기생활문화센터 #<br>두근두근 #설렘 댓일장 이벤트 결과발표</p>
-                <p class="main-contents__notice--list-text">2022 경기생활문화센터 #두근두근 #설렘 댓일장 이벤트 결과발표</p>
-                <p class="main-contents__notice--list-date">2022. 04. 14</p>
+              <li class="list--item">
+                <a class="name" href="#">
+                  <h2>기록자료</h2>
+                </a>
+                <div class="contents hide">
+                  <ul>
+                    <li>영상채널</li>
+                    <li>발간도서</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="list--item">
+                <a class="name" href="#">
+                  <h2>웹진</h2>
+                </a>
+                <div class="contents hide">
+                  <ul>
+                    <li>소개</li>
+                    <li>웹진</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="list--item">
+                <a class="name" href="#">
+                  <h2>소통</h2>
+                </a>
+                <div class="contents hide">
+                  <ul>
+                    <li>공지사항</li>
+                    <li>자주묻는질문</li>
+                    <li>1:1문의</li>
+                  </ul>
+                </div>
               </li>
             </ul>
           </div>
-        </article><!-- <article class="main-contents container info"> -->
+          <div class="header__service">
+            <div class="header__service--login">
+              <a class="material-icons">lock<span>로그인</span></a>
+            </div>
+            <div class="header__service--search">
+              <a class="material-icons">search<span>검색</span></a>
+            </div>
+            <div class="header__service--cal">
+              <a class="material-icons">calendar_today<span>일정</span></a>
+            </div>
+          </div>
+        </div>
+      </header>
 
+      <!-- / 비주얼 영역 / -->
+      <article>
+        <div class="visual">
+          <div class="swiper visual__container">
+            <div class="swiper-wrapper visual__contents">
+              <div class="swiper-slide">
+                <div class="visual__contents--img">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg06.gif?alt=media&token=8157be43-5a7c-479c-9f0a-78cd86471cbd"
+                    alt="main-visual-image"
+                  />
+                </div>
+                <div class="visual__contents--text">
+                  <div class="visual__contents--text-sub">
+                    <p>경기도 생활문화의 중심</p>
+                  </div>
+                  <div class="visual__contents--text-title">
+                    <h2>일상에 문화를 물들이다</h2>
+                  </div>
+                  <div class="visual__contents--text-date"></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="visual__contents--img">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg02.gif?alt=media&token=caa4ece2-0c99-4a4a-83dd-0c56a9dc5135"
+                    alt="main-visual-image"
+                  />
+                </div>
+                <div class="visual__contents--text">
+                  <div class="visual__contents--text-sub">
+                    <p>지역주민 누구나 이용가능한 생활문화공간</p>
+                  </div>
+                  <div class="visual__contents--text-title">
+                    <h2>경기도민과 만나다</h2>
+                  </div>
+                  <div class="visual__contents--text-date"></div>
+                </div>
+              </div>
+              <span class="swiper-pagination"></span>
+            </div>
+          </div>
+        </div>
+      </article>
 
-      </section>
+      <!-- / nav sub-menu 영역 / -->
+      <nav class="sub-menu container">
+        <div class="sub-menu__contents">
+          <ul class="sub-menu__contents--list">
+            <li>
+              <a>우리지역 생활문화공간</a><i class="xi-long-arrow-right"></i>
+            </li>
+            <li><a>생활문화 찾기</a><i class="xi-long-arrow-right"></i></li>
+            <li><a>경기상상캠퍼스</a><i class="xi-long-arrow-right"></i></li>
+            <li><a>온라인 문의</a><i class="xi-long-arrow-right"></i></li>
+          </ul>
+        </div>
+      </nav>
 
+      <!-- / main 영역 / -->
+      <main>
+        <article class="main-contents">
+          <section class="main-contents container visual">
+            <div
+              class="main-contents__visual"
+              data-aos="fade-up"
+              data-aos-offset="0"
+              data-aos-duration="1500"
+            >
+              <div class="main-contents__visual--title">
+                <h3>이달의 생활문화</h3>
+                <p>이달에 운영되는 다양한 생활문화을 만나보세요.</p>
+                <a href="#">더보기 +</a>
+              </div>
+              <div class="main-contents__visual--cal">
+                <div class="main-contents__visual--cal-month">
+                  <button class="btn pre-month">&lt;</button>
+                  <span class="cal-show-month"></span>
+                  <button class="btn next-month">&gt;</button>
+                  <span class="cal-show-year"></span>
+                </div>
+                <div class="main-contents__visual--cal-date"></div>
+              </div>
+              <div class="swiper main-contents__visual">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg-visual1.jpg?alt=media&token=aebd0624-408e-40fe-9dd1-27dd956327fa"
+                      alt="main-visual-image"
+                    />
+                    <div class="active-text">
+                      <div class="text">
+                        <p>구리</p>
+                        <p>
+                          아파트 옆 문화예술, 나도 그림책 미술작가! with
+                          '도도리' 시민동아리
+                        </p>
+                        <p>더샵채움작은도서관</p>
+                        <p>2022.04.13 ~ 2022.04.27</p>
+                      </div>
+                    </div>
+                    <div class="visual-text">
+                      <span>#교육</span>
+                      <span>2022.04.13 - 2022.04.27</span>
+                      <p>
+                        아파트 옆 문화예술, 나도 그림책 미술작가! with '도도리'
+                        시민동아리
+                      </p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg-visual2.jpg?alt=media&token=0d3d7e3c-5cda-44d8-8875-c07ef5bad9ad"
+                      alt="main-visual-image"
+                    />
+                    <div class="active-text">
+                      <div class="text">
+                        <p>구리</p>
+                        <p>아파트 옆 문화예술, 그림 그리며 함께 놀자!</p>
+                        <p>이음작은도서관</p>
+                        <p>2022.04.02 ~ 2022.04.30</p>
+                      </div>
+                    </div>
+                    <div class="visual-text">
+                      <span>#교육</span>
+                      <span>2022.04.02 - 2022.04.30</span>
+                      <p>아파트 옆 문화예술, 그림 그리며 함께 놀자!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="visual__objects">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg08.svg?alt=media&token=dbda05d3-76fe-496b-a25d-e8dd0d40439c"
+                alt="visual__object1"
+              />
+            </div>
+          </section>
+          <section class="main-contents container info">
+            <div
+              class="main-contents__space"
+              data-aos="fade-up"
+              data-aos-offset="0"
+              data-aos-duration="1500"
+            >
+              <div class="main-contents__space--title">
+                <h3>경기생활문화센터<br />공간소개</h3>
+                <p>경기생활문화센터에서 운영하는 공간을 둘러보세요.</p>
+                <button class="more-btn">MORE</button>
+              </div>
+              <div class="main-contents__space--btns">
+                <ul class="main-contents__space--btns-list">
+                  <li><button>책 놀이터</button></li>
+                  <li><button>생활 수유실</button></li>
+                </ul>
+                <ul class="main-contents__space--btns-list">
+                  <li><button>동네부엌</button></li>
+                  <li><button>생생 수유실</button></li>
+                  <li><button>마주침 공간1</button></li>
+                  <li><button>마주침 공간2</button></li>
+                </ul>
+                <ul class="main-contents__space--btns-list">
+                  <li><button>한뼘전시</button></li>
+                  <li><button>무아지경</button></li>
+                  <li><button>생생살롱1</button></li>
+                  <li><button>생생살롱2</button></li>
+                </ul>
+              </div>
+              <img
+                class="main-contents__space--img"
+                src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg16.png?alt=media&token=2ffe91f3-d950-4cda-879e-b298a7648536"
+                alt="main-contents__info--img"
+              />
+            </div>
+            <div
+              class="main-contents__find"
+              data-aos="fade-up"
+              data-aos-offset="0"
+              data-aos-duration="1500"
+            >
+              <div class="main-contents__find--title">
+                <h3>우리지역<br />생활문화공간을 찾아보세요.</h3>
+                <p>내가 사는 지역 생활문화공간 바로 찾기</p>
+                <button class="more-btn">MORE</button>
+              </div>
+              <img
+                class="main-contents__find--img"
+                src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg38.svg?alt=media&token=7e8e9891-186b-4ba5-adc9-9602f70e91e9"
+                alt="main-contents__find--img"
+              />
+            </div>
+            <div class="main-contents__sns">
+              <div
+                class="main-contents__sns container"
+                data-aos="fade-up"
+                data-aos-offset="0"
+                data-aos-duration="1500"
+              >
+                <div class="main-contents__sns--title">
+                  <h3>경기생활문화센터 SNS</h3>
+                  <p>
+                    경기생활문화센터와 친구를 맺고<br />다양한 소식을
+                    만나보세요.
+                  </p>
+                  <button class="more-btn">MORE</button>
+                </div>
+                <div class="swiper main-contents__sns--img">
+                  <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                      <a href="javascript:void(0);">
+                        <img
+                          src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg41.jpg?alt=media&token=4f0531cc-2e39-40ca-a7a7-89949b96edb1"
+                          alt="youtube-img"
+                        />
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="javascript:void(0);">
+                        <img
+                          src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg42.jpg?alt=media&token=91b7aafb-13c5-4dc0-936e-82217efe27ac"
+                          alt="youtube-img"
+                        />
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="javascript:void(0);">
+                        <img
+                          src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg43.jpg?alt=media&token=da68517f-0100-4a71-8e53-076da16f83d3"
+                          alt="youtube-img"
+                        />
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="javascript:void(0);">
+                        <img
+                          src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg44.jpg?alt=media&token=b4cfc418-5862-4aed-b674-5587b0f7894f"
+                          alt="youtube-img"
+                        />
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="javascript:void(0);">
+                        <img
+                          src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg45.jpg?alt=media&token=d7d70e30-67f8-4d48-a543-79746c48e1bd"
+                          alt="youtube-img"
+                        />
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="javascript:void(0);">
+                        <img
+                          src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg46.jpg?alt=media&token=15ec71bd-4bed-4251-8c16-e56ad5929587"
+                          alt="youtube-img"
+                        />
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="javascript:void(0);">
+                        <img
+                          src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg47.jpg?alt=media&token=a8cf93e2-4de0-42be-b6d8-75aac1659eba"
+                          alt="youtube-img"
+                        />
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="javascript:void(0);">
+                        <img
+                          src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg48.jpg?alt=media&token=490e337e-8d0b-4369-b9da-3c3fcdb3f99e"
+                          alt="youtube-img"
+                        />
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="javascript:void(0);">
+                        <img
+                          src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg49.jpg?alt=media&token=d9d06c99-4b4c-48bf-a143-b2552726bb42"
+                          alt="youtube-img"
+                        />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="main-contents__notice">
+              <div
+                class="main-contents__notice container"
+                data-aos="fade-up"
+                data-aos-offset="0"
+                data-aos-duration="1500"
+              >
+                <div class="main-contents__notice--title">
+                  <h3>새로운 소식</h3>
+                </div>
+                <ul class="main-contents__notice--list">
+                  <li class="main-contents__notice--list-item">
+                    <p class="main-contents__notice--list-type">공지</p>
+                    <p class="main-contents__notice--list-title">
+                      시니어 디지털 교육<br />
+                      "시니어도 디지털 문화를 즐긴다" 참여자 모집
+                    </p>
+                    <p class="main-contents__notice--list-text">
+                      ✨ 경기생활문화센터 시니어 디지털 교육 ✨ &lt;시니어도
+                      디지털 문화를 즐긴다&gt; 내 손안에 잇지만, 늘 알쏭달쏭
+                      스마트폰📱 기본활용법부터 자주쓰는 네이버, 카카오톡,
+                      유튜브 활용법과 대망의 모바일 뱅킹까지! 시니어를 위한
+                      스마트폰 활용 교육을 진행합니다🤗 🔍 일정 - 일자 :
+                      2022.05.03 ~ 06.30 (8주) - 시간 : 10:00 ~ 12:00 (2시간) -
+                      매주 화요일, 목요일 2개반 운영 🔍 대상 - 1972년 이전
+                      출생자로 핸드폰 명의와 신청자명이 동일한 경기도민 - 화요반
+                      7명, 목요반 9명 모집 *선착순 🔍 장소 - 생생1990 3층
+                      생활창작공방 회의실 (경기도 수원시 서둔로 166
+                      경기상상캠퍼스) 🔍 신청 (화요반) 👈클릭 (목요반) 👈클릭 ☎
+                      문의 031-296-0540(경기생활문화센터) 많은 관심과 참여
+                      부탁드립니다🤗💕
+                    </p>
+                    <p class="main-contents__notice--list-date">2022. 04. 18</p>
+                    <i class="xi-plus-thin"></i>
+                  </li>
+                  <li class="main-contents__notice--list-item">
+                    <p class="main-contents__notice--list-type">공지</p>
+                    <p class="main-contents__notice--list-title">
+                      경기도 31개 시군 생활문화<br />교류의 장 &lt;생활문화
+                      31&gt; 온라인 카페 개설
+                    </p>
+                    <p class="main-contents__notice--list-text">
+                      경기도 31개 시군 생활문화 교류의 장 🙋‍♂️ 생활문화31 카페
+                      오픈 🙋‍♀️ 활발한 활동을 통해 다양한 생활문화 정보를
+                      교류해보아요🤗
+                    </p>
+                    <p class="main-contents__notice--list-date">2022. 04. 14</p>
+                    <i class="xi-plus-thin"></i>
+                  </li>
+                  <li class="main-contents__notice--list-item">
+                    <p class="main-contents__notice--list-type">공지</p>
+                    <p class="main-contents__notice--list-title">
+                      2022년 경기생활문화센터 #<br />두근두근 #설렘 댓일장
+                      이벤트 결과발표
+                    </p>
+                    <p class="main-contents__notice--list-text">
+                      2022 경기생활문화센터 #두근두근 #설렘 댓일장 이벤트
+                      결과발표
+                    </p>
+                    <p class="main-contents__notice--list-date">2022. 04. 14</p>
+                    <i class="xi-plus-thin"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="contents__objects">
+              <div>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg15.svg?alt=media&token=bbad65c3-303b-4c7d-aedd-d43d026990ab"
+                  alt="main__object1"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg15.svg?alt=media&token=bbad65c3-303b-4c7d-aedd-d43d026990ab"
+                  alt="main__object2"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg39.svg?alt=media&token=156fd939-9d35-498e-8bf7-0651ffa10b34"
+                  alt="main__object3"
+                />
+              </div>
+            </div>
+          </section>
+        </article>
+        <div class="scroll__btn">
+          <i class="xi-angle-up"></i>
+        </div>
+      </main>
 
-      
-    </main>
-    
-    
-    <footer class="footer">
-      <div>
-        footer
-      </div>
-    </footer>
-  </div> 
-</body>
-
+      <!-- / footer 영역 / -->
+      <footer>
+        <div class="footer container">
+          <div class="footer__info">
+            <div class="footer__info--lists">
+              <ul class="footer__info--lists-service">
+                <li><a href="#">개인정보 처리방침</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">행정정보공개</a></li>
+                <li><a href="#">클린신고센터</a></li>
+              </ul>
+              <div class="footer__info--lists-etc">
+                <ul class="lists-etc-icons">
+                  <li><i class="xi-facebook-official"></i></li>
+                  <li><i class="xi-kakaotalk"></i></li>
+                  <li><i class="xi-youtube-play"></i></li>
+                  <li><i class="xi-instagram"></i></li>
+                </ul>
+                <div class="lists-etc-family">
+                  <a href="javascript:void(0);"
+                    ><span>패밀리 사이트 <i class="xi-angle-up-min"></i></span
+                  ></a>
+                  <ul>
+                    <li><a href="javascript:void(0);">경기상상캠퍼스</a></li>
+                    <li><a href="javascript:void(0);">e상상캠퍼스</a></li>
+                    <li><a href="javascript:void(0);">경기문화재단</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer__info--contact">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/clonecoding-imgs.appspot.com/o/GGCF%2Fimg50.svg?alt=media&token=2cda5991-50c1-4110-8382-8fb5c7c37e17"
+                alt="경기생활문화센터 로고"
+              />
+              <p>
+                경기문화재단 경기생활문화센터 (16614) 경기도 수원시 권선구
+                서둔로 166 생생1990 / 대표전화 031-296-0540 <br />
+                사업자번호 135-82-06932 / 대표이사 강헌<br />
+                COPYRIGHT©GGCF. ALL RIGHTS RESERVED.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
