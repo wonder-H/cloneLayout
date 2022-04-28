@@ -1,7 +1,8 @@
-# cloneWebforPractice
+# Clone Web for Practice
 
 This project is about clone codding for practice.
-This project only has personal purpose to practice for front-end, web development 
+This project only has personal purpose to practice for front-end, web development.
+Please contact me before use for personal or something else.    
 
 <br>
 
@@ -9,16 +10,36 @@ This project only has personal purpose to practice for front-end, web developmen
 
 <br>
 
-    Open index.html file 
+    Open index.html file through Web Browser such as Chrome, Firefox.
 
 <br>
 <hr>
 <br>
 
-## Tools (plan)
+## Tools
 
-    * Firebase(storage for imgs)
+<br>
 
+* Firebase(storage for imgs)
+* Xeicon(for icons)
+* Google Icons & Fonts
+* Swiper.js(for sliding effect)
+* Gsap.js + ScrollTo plugin(to handle scroll button)
+* Lodash.js(to handle scroll event from window)
+* AOS.js(for scroll animation)
+
+<hr>
+<br>
+
+## Info
+
+<br>
+
+- Trying to use lots of CSS and HTML for practice.
+- Using CDN(Content Delivery Network).
+- Having a plan to change Javascript after basic codes from HTML, CSS.
+
+<br>
 <hr>
 <br>
 
