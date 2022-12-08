@@ -10,8 +10,10 @@
 
 * [경기생활문화센터](https://glife.ggcf.kr/) 
 
-<br>
+[구현 페이지](https://deploy-preview-55--luxury-strudel-626934.netlify.app/)
 
+
+<br>
 
 ### 2. 제작에 사용한 것들
 
